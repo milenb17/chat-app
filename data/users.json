@@ -1,0 +1,44 @@
+[
+  {
+    "id":1,
+    "role":"patient",
+    "userName":"John Doe",
+    "password":"test",
+    "conversations":[1]
+  },
+  {
+    "id":2,
+    "role":"physician",
+    "userName":"Dr. Smith",
+    "password":"test",
+    "conversations":[1,2]
+  },
+  {
+    "id":3,
+    "role":"patient",
+    "userName":"Jane Doe",
+    "password":"test",
+    "conversations":[2]
+  },
+  {
+    "id":4,
+    "role":"physician",
+    "userName":"Dr. Johnson",
+    "password":"test",
+    "conversations":[]
+  },
+  {
+    "id":5,
+    "role":"patient",
+    "userName":"Sally Smith",
+    "password":"test",
+    "conversations":[]
+  },
+  {
+    "id":6,
+    "role":"physician",
+    "userName":"Dr. Doe",
+    "password":"test",
+    "conversations":[]
+  }
+]
