@@ -24,6 +24,7 @@ const Chat = ({ convo, user, addMessage, empty }) => {
   }, [convo]);
 
   const handleNewMessage = (message) => {
+    if (message == "") return;
     addMessage(message);
     setNewMessage("");
   };
