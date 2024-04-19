@@ -1,5 +1,4 @@
 import "@styles/globals.css";
-import { Providers } from "./Providers";
 import Nav from "@components/Nav";
 import { Inter } from "next/font/google";
 
