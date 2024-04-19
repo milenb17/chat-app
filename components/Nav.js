@@ -16,7 +16,7 @@ import { Logo } from "@public/livewell-logo-black";
 const Nav = () => {
   return (
     <Navbar className="w-screen justify-start bg-F7F7F7">
-      <NavbarBrand>
+      <NavbarBrand className="pt-8">
         <Link href="/">
           <Logo />
         </Link>
