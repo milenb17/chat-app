@@ -28,6 +28,12 @@ const Chat = ({ convo, user, addMessage, empty }) => {
     addMessage(message);
     setNewMessage("");
   };
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      console.log(e.key);
+      handleNewMessage(newMessage);
+    }
+  };
   return (
     // if empty, return empty card of same size
     empty ? (
@@ -58,6 +64,7 @@ const Chat = ({ convo, user, addMessage, empty }) => {
             value={newMessage}
             onChange={handleType}
             placeholder="Type a message"
+            onKeyDown={(e) => handleKeyDown(e)}
           ></Input>
           <Button onClick={() => handleNewMessage(newMessage)}>Send</Button>
         </CardFooter>

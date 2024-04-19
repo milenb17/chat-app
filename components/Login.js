@@ -26,6 +26,7 @@ const Login = ({ role, users }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
+    e.preventDefault();
     const user = users.find(
       (user) =>
         user.userName.toLowerCase() === formData.userName.toLowerCase() &&
@@ -40,7 +41,7 @@ const Login = ({ role, users }) => {
   return (
     <div className="flex justify-center h-full w-full items-center">
       <Card className="p-16">
-        <form className="gap-8 flex flex-col" onSubmit={handleSubmit}>
+        <form className="gap-8 flex flex-col" onSubmit={(e) => handleSubmit(e)}>
           <p className=" text-center text-2xl">Login</p>
           <div className="flex flex-col gap-4">
             <Input
@@ -61,7 +62,7 @@ const Login = ({ role, users }) => {
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <Button color="primary" onPress={(e) => handleSubmit(e)}>
+          <Button color="primary" type="submit">
             Log In
           </Button>
         </form>
