@@ -1,0 +1,40 @@
+[{
+  "id": 1,
+  "patient": 1,
+  "physician": 2,
+  "messages": [{
+  "id": 1,
+  "time": "2024-08-18T10:15:30.000Z",
+  "text": "Hi Dr. Smith, I'm feeling a little under the weather today. I have a headache and a sore throat. I'm wondering if I should come in for an appointment or if there's anything I can do at home to feel better. Thanks!",
+  "sender": "patient",
+  "isText": true
+},
+{
+  "id": 2,
+  "time": "2024-08-18T11:15:30.000Z",
+  "text": "Hi John, sorry to hear that.",
+  "sender": "physician",
+  "isText": true
+}]
+
+},
+{
+  "id": 2,
+  "patient": 3,
+  "physician": 2,
+  "messages": [{
+  "id": 3,
+  "time": "2024-08-18T12:15:30.000Z",
+  "text": "Hi Jane, your scans came back all clear.",
+  "sender": "physician",
+  "isText": true
+},
+{
+  "id": 4,
+  "time": "2024-08-18T13:15:30.000Z",
+  "text": "Hi Dr. Smith, thanks for your help.",
+  "sender": "patient",
+  "isText": true
+}]
+
+}]
