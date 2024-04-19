@@ -30,11 +30,8 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
   const [selectedId, setSelectedId] = useState(null);
   const [conversationList, setConversationList] = useState(populatedConvos);
   const [newConvo, setNewConvo] = useState("");
-  const [messageCount, setMessageCount] = useState(5);
-  const [conversationCount, setConversationCount] = useState(3);
   const [replied, setReplied] = useState(false);
   const oppositeRole = user.role === "patient" ? "physician" : "patient";
-
   const handleSelectionChange = (keys) => {
     console.log("List selection changed", keys);
     setSelectedId(keys);
@@ -48,20 +45,19 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
     const newConversationList = conversationList.map((convo) => {
       if (convo.id === selectedConvo.id) {
         const newMessage = {
-          id: messageCount,
+          id: Date.now().toString(36),
           time: new Date().toISOString(),
           text: message,
           sender: user.role,
           isText: true,
         };
-        const newMessageCount = messageCount + 1;
-        setMessageCount(newMessageCount);
         convo.messages.push(newMessage);
       }
       return convo;
     });
     setConversationList(newConversationList);
     if (user.role == "patient" && !replied) {
+      setReplied(true);
       setTimeout(handleReply, 3000);
     }
   };
@@ -73,14 +69,12 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
     const newConversationList = conversationList.map((convo) => {
       if (convo.id === selectedConvo.id) {
         const newMessage = {
-          id: messageCount,
+          id: Date.now().toString(36),
           time: new Date().toISOString(),
           text: message,
           sender: "physician",
           isText: true,
         };
-        const newMessageCount = messageCount + 1;
-        setMessageCount(newMessageCount);
         convo.messages.push(newMessage);
       }
       return convo;
@@ -105,14 +99,12 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
       handleSelectionChange(new Set([existingConvo.id.toString()]));
     } else {
       const newConvo = {
-        id: conversationCount,
+        id: Date.now().toString(36),
         patient: user.role === "patient" ? user.id : Number(contact),
         physician: user.role === "physician" ? user.id : contact,
         contact: contacts.find((c) => c.id == contact),
         messages: [],
       };
-      const newConversationCount = conversationCount + 1;
-      setConversationCount(newConversationCount);
       conversationList.push(newConvo);
       setConversationList(conversationList);
       handleSelectionChange(new Set([newConvo.id.toString()]));

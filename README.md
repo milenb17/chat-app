@@ -1,3 +1,9 @@
+## Chat App
+
+This is an app designed to mimic a patient-provider chat system. To begin, select a role type. Once incorrect login credentials are provided, a modal will pop up providing credentials to use.
+
+Providers can chat with any patients in the system, and patients can chat with any providers in the system.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
