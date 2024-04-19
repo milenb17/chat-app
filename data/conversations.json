@@ -25,7 +25,7 @@
   "messages": [{
   "id": 3,
   "time": "2024-08-18T12:15:30.000Z",
-  "text": "Hi Hi Jane, your scans came back all clear.",
+  "text": "Hi Jane, your scans came back all clear.",
   "sender": "physician",
   "isText": true
 },

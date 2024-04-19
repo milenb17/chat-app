@@ -9,6 +9,8 @@ import {
   ModalBody,
   ModalFooter,
   useDisclosure,
+  Card,
+  CardBody,
 } from "@nextui-org/react";
 
 import { useRouter } from "next/navigation";
@@ -36,27 +38,34 @@ const Login = ({ role, users }) => {
     }
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h1>Login {role}</h1>
-        <Input
-          name="userName"
-          type="text"
-          label="Name"
-          placeholder="Enter your name"
-          value={formData.userName}
-          onChange={(e) => handleChange(e)}
-        />
-        <Input
-          name="password"
-          type="password"
-          label="Password"
-          placeholder="Enter your password"
-          value={formData.password}
-          onChange={(e) => handleChange(e)}
-        />
-        <Button onPress={(e) => handleSubmit(e)}>Log In</Button>
-      </form>
+    <div className="flex justify-center h-full w-full items-center">
+      <Card className="p-16">
+        <form className="gap-8 flex flex-col" onSubmit={handleSubmit}>
+          <p className=" text-center text-2xl">Login</p>
+          <div className="flex flex-col gap-4">
+            <Input
+              name="userName"
+              type="text"
+              label="Name"
+              placeholder="Enter your name"
+              value={formData.userName}
+              onChange={(e) => handleChange(e)}
+              className="w-[400px]"
+            />
+            <Input
+              name="password"
+              type="password"
+              label="Password"
+              placeholder="Enter your password"
+              value={formData.password}
+              onChange={(e) => handleChange(e)}
+            />
+          </div>
+          <Button color="primary" onPress={(e) => handleSubmit(e)}>
+            Log In
+          </Button>
+        </form>
+      </Card>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
@@ -73,7 +82,7 @@ const Login = ({ role, users }) => {
           )}
         </ModalContent>
       </Modal>
-    </>
+    </div>
   );
 };
 

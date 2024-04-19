@@ -27,26 +27,40 @@ const Home = () => {
     router.push(`/${role}/login`);
   };
   return (
-    <div>
-      <h1>I am a...</h1>
-      <div className="flex flex-row">
-        <Card isPressable onPress={(e) => handleRoleSelect(e)} value="patient">
-          <CardBody>
-            <IoMdPerson />
-          </CardBody>
-          <CardFooter>Patient</CardFooter>
-        </Card>
-        <Card
-          isPressable
-          onPress={(e) => handleRoleSelect(e)}
-          value="physician"
-        >
-          <CardBody>
-            <FaUserDoctor />
-          </CardBody>
-          <CardFooter>Physician</CardFooter>
-        </Card>
-      </div>
+    <div className="flex justify-center h-full w-full items-center">
+      <Card className="p-16">
+        <CardHeader className="mb-8 justify-center text-xl">
+          Please Select Your Role
+        </CardHeader>
+        <CardBody className="flex gap-8 flex-row">
+          <Card
+            isPressable
+            onPress={(e) => handleRoleSelect(e)}
+            value="patient"
+            className="h-64 w-64"
+          >
+            <CardBody className="justify-center items-center">
+              <IoMdPerson size="8em" />
+            </CardBody>
+            <CardFooter className="justify-center items-center text-lg">
+              Patient
+            </CardFooter>
+          </Card>
+          <Card
+            isPressable
+            onPress={(e) => handleRoleSelect(e)}
+            value="physician"
+            className="h-64 w-64"
+          >
+            <CardBody className="justify-center items-center">
+              <FaUserDoctor size="6em" />
+            </CardBody>
+            <CardFooter className="justify-center items-center text-lg">
+              Physician
+            </CardFooter>
+          </Card>
+        </CardBody>
+      </Card>
     </div>
   );
 };

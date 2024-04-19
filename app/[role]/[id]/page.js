@@ -18,14 +18,12 @@ const page = async ({ params }) => {
     };
   });
   return (
-    <>
-      <SideBar
-        user={user}
-        conversations={conversations}
-        contacts={contacts}
-        populatedConvos={populatedConvos}
-      ></SideBar>
-    </>
+    <SideBar
+      user={user}
+      conversations={conversations}
+      contacts={contacts}
+      populatedConvos={populatedConvos}
+    ></SideBar>
   );
 };
 

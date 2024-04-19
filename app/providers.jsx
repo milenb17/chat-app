@@ -8,7 +8,7 @@ export function Providers({children}) {
   const router = useRouter();
 
   return (
-    <NextUIProvider navigate={router.push}>
+    <NextUIProvider  navigate={router.push}>
       {children}
     </NextUIProvider>
   )
