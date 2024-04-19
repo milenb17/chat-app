@@ -22,21 +22,11 @@ const Nav = () => {
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Dashboard
-          </Link>
-        </NavbarItem>
+        <NavbarItem>Dashboard</NavbarItem>
         <NavbarItem isActive>
-          <Link href="" aria-current="page">
-            Messages
-          </Link>
+          <strong>Messages</strong>
         </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="">
-            Profile
-          </Link>
-        </NavbarItem>
+        <NavbarItem>Profile</NavbarItem>
       </NavbarContent>
     </Navbar>
   );

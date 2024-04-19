@@ -32,6 +32,7 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
   const [newConvo, setNewConvo] = useState("");
   const [messageCount, setMessageCount] = useState(5);
   const [conversationCount, setConversationCount] = useState(3);
+  const [replied, setReplied] = useState(false);
   const oppositeRole = user.role === "patient" ? "physician" : "patient";
 
   const handleSelectionChange = (keys) => {
@@ -40,6 +41,7 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
     const id = Array.from(keys)[0];
     const convo = conversationList.find((convo) => convo.id == id);
     setSelectedConvo(convo);
+    setReplied(false);
   };
   const handleNewMessage = (message) => {
     console.log("New message", message);
@@ -50,6 +52,31 @@ const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
           time: new Date().toISOString(),
           text: message,
           sender: user.role,
+          isText: true,
+        };
+        const newMessageCount = messageCount + 1;
+        setMessageCount(newMessageCount);
+        convo.messages.push(newMessage);
+      }
+      return convo;
+    });
+    setConversationList(newConversationList);
+    if (user.role == "patient" && !replied) {
+      setTimeout(handleReply, 3000);
+    }
+  };
+  const handleReply = () => {
+    const message = `Hi ${
+      user.userName.split(" ")[0]
+    }, we have recieved your message and will get back to you shortly. If this is an emergency please contact 9-1-1.`;
+    setReplied(true);
+    const newConversationList = conversationList.map((convo) => {
+      if (convo.id === selectedConvo.id) {
+        const newMessage = {
+          id: messageCount,
+          time: new Date().toISOString(),
+          text: message,
+          sender: "physician",
           isText: true,
         };
         const newMessageCount = messageCount + 1;
