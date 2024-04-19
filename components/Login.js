@@ -28,7 +28,7 @@ const Login = ({ role, users }) => {
   const handleSubmit = (e) => {
     const user = users.find(
       (user) =>
-        user.userName === formData.userName &&
+        user.userName.toLowerCase() === formData.userName.toLowerCase() &&
         user.password === formData.password
     );
     if (user) {
