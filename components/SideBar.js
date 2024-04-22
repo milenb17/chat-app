@@ -25,6 +25,11 @@ import {
 import { GoPlus } from "react-icons/go";
 import Chat from "./Chat";
 
+/* See /data to see how users and conversations are stored. 
+- Here, contactable users, current users conversations, and a conversations' messages are stored in arrays in state
+- "Contactable users" are users with the opposite roles of the current user (eg doctors can contact patients and vice versa)
+- "Populated conversations" are conversations with the contactable users' information attached to them, as it is initially stored as just an id
+*/
 const SideBar = ({ user, conversations, contacts, populatedConvos }) => {
   const [selectedConvo, setSelectedConvo] = useState(null);
   const [selectedId, setSelectedId] = useState(null);

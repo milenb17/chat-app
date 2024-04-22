@@ -4,6 +4,11 @@ This is an app designed to mimic a patient-provider chat system. To begin, selec
 
 Providers can chat with any patients in the system, and patients can chat with any providers in the system.
 
+See /data folder to see how the data is structured.
+
+- Each user has a conversation attribute which is an array containing the convsersationIds of conversations they are a part of.
+- See /components/SideBar for the logic on updating conversations.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
